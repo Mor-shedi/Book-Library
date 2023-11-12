@@ -1,5 +1,4 @@
 const express = require("express");
-const asyncHandler = require("express-async-handler");
 const bookController = require("../controller/book.controller");
 const {
   createBookValidator,

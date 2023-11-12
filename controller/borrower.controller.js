@@ -47,51 +47,51 @@ class UserController {
     }
   }
 
-  static async checkoutController(req, res, next) {
-    try {
-      const updatedBorrower = await Borrower.checkout(
-        req.body.book_id,
-        req.body.borrower_id
-      );
-      res.status(200).json({ msg: "Book checked out successfully" });
-    } catch (error) {
-      next(
-        new ApiError(error.message || "Borrower not updated. Try again.", 500)
-      );
-    }
-  }
+  // static async checkoutController(req, res, next) {
+  //   try {
+  //     const updatedBorrower = await Borrower.checkout(
+  //       req.body.book_id,
+  //       req.body.borrower_id
+  //     );
+  //     res.status(200).json({ msg: "Book checked out successfully" });
+  //   } catch (error) {
+  //     next(
+  //       new ApiError(error.message || "Borrower not updated. Try again.", 500)
+  //     );
+  //   }
+  // }
 
-  static async getAllCheckoutController(req, res, next) {
-    try {
-      const checkout = await Borrower.getAllCheckout();
-      res.status(200).json(checkout);
-    } catch (error) {
-      next(new ApiError(error.message, 500));
-    }
-  }
+  // static async getAllCheckoutController(req, res, next) {
+  //   try {
+  //     const checkout = await Borrower.getAllCheckout();
+  //     res.status(200).json(checkout);
+  //   } catch (error) {
+  //     next(new ApiError(error.message, 500));
+  //   }
+  // }
 
-  static async returnController(req, res, next) {
-    try {
-      const updatedBorrower = await Borrower.returnbooked(
-        req.body.book_id,
-        req.body.borrower_id
-      );
-      res.status(200).json({ msg: "Book returned successfully" });
-    } catch (error) {
-      next(
-        new ApiError(error.message || "Borrower not updated. Try again.", 500)
-      );
-    }
-  }
+  // static async returnController(req, res, next) {
+  //   try {
+  //     const updatedBorrower = await Borrower.returnbooked(
+  //       req.body.book_id,
+  //       req.body.borrower_id
+  //     );
+  //     res.status(200).json({ msg: "Book returned successfully" });
+  //   } catch (error) {
+  //     next(
+  //       new ApiError(error.message || "Borrower not updated. Try again.", 500)
+  //     );
+  //   }
+  // }
 
-  static async borrowerHistoryController(req, res, next) {
-    try {
-      const history = await Borrower.borrowerHistory(req.params.id);
-      res.status(200).json(history);
-    } catch (error) {
-      next(new ApiError(error.message, 500));
-    }
-  }
+  // static async borrowerHistoryController(req, res, next) {
+  //   try {
+  //     const history = await Borrower.borrowerHistory(req.params.id);
+  //     res.status(200).json(history);
+  //   } catch (error) {
+  //     next(new ApiError(error.message, 500));
+  //   }
+  // }
 }
 
 module.exports = UserController;
